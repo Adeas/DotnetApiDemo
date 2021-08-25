@@ -1,4 +1,4 @@
-# dotnet-api
+# dotnet-api (requires .NET 5.0)
 
 Example of Todo API using:
 - Microsoft.EntityFrameworkCore.SqlServer
