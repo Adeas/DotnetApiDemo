@@ -3,7 +3,7 @@
 
 ## What is this example for?
 
-This project mostly shows how to implement ASP.NET Core Web API using technologies listed below:
+This project mostly shows how to implement ASP.NET Core Web API using packages listed below:
 - Microsoft.EntityFrameworkCore.SqlServer
 - Microsoft.EntityFrameworkCore.Design
 - AutoMapper.Extensions.Microsoft.DependencyInjection
