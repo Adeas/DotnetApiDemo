@@ -3,8 +3,8 @@
 version: '3.4'
 
 services:
-  ms-sql-server:
-    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+  dbserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: "VerySecurePassw0rd!"
@@ -17,7 +17,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     environment:
-      DbServer: "ms-sql-server"
+      DbServer: "dbserver"
       DbPort: "1433"
       DbUser: "SA"
       Password: "VerySecurePassw0rd!"
@@ -25,4 +25,4 @@ services:
     ports:
       - 8001:80
     depends_on: 
-      - ms-sql-server
+      - dbserver
