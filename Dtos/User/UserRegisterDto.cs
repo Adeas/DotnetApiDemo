@@ -1,4 +1,4 @@
-namespace dotnet_api.Dtos.User
+namespace DotnetApiDemo.Dtos.User
 {
     public class UserRegisterDto
     {

@@ -1,8 +1,8 @@
 using AutoMapper;
-using dotnet_api.Dtos.Todo;
-using dotnet_api.Models;
+using DotnetApiDemo.Dtos.Todo;
+using DotnetApiDemo.Models;
 
-namespace dotnet_api
+namespace DotnetApiDemo
 {
     public class AutoMapperProfile : Profile
     {

@@ -1,6 +1,6 @@
-using dotnet_api.Models;
+using DotnetApiDemo.Models;
 
-namespace dotnet_api.Dtos.Todo
+namespace DotnetApiDemo.Dtos.Todo
 {
     public class GetTodoDto
     {

@@ -16,10 +16,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Filters;
 using Microsoft.AspNetCore.Http;
-using dotnet_api.Data;
-using dotnet_api.Services.TodoService;
+using DotnetApiDemo.Data;
+using DotnetApiDemo.Services;
+using DotnetApiDemo.Services.TodoService;
+using DotnetApiDemo.Services.DatabaseManagementService;
 
-namespace dotnet_api
+namespace DotnetApiDemo
 {
     public class Startup
     {
@@ -33,8 +35,14 @@ namespace dotnet_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var server = Configuration["DbServer"] ?? "localhost";
+            var port = Configuration["DbPort"] ?? "1433"; // Default SQL Server port
+            var user = Configuration["DbUser"] ?? "SA"; // Warning do not use the SA account
+            var password = Configuration["Password"] ?? "VerySecurePassw0rd!";
+            var database = Configuration["Database"] ?? "DotnetApiDemo";
+
             services.AddDbContext<DataContext>(options => 
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer($"Server={server}, {port};Initial Catalog={database};User ID={user};Password={password}"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -69,14 +77,12 @@ namespace dotnet_api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dotnnet_api v1"));
-            }
-
-            app.UseHttpsRedirection();
+            // Run migrations if needed
+            DatabaseManagementService.MigrationInitialization(app);
+            app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dotnnet_api v1"));
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

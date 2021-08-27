@@ -1,4 +1,4 @@
-namespace dotnet_api.Dtos.Todo
+namespace DotnetApiDemo.Dtos.Todo
 {
     public class AddTodoDto
     {

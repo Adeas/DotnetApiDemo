@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
-using dotnet_api.Data;
-using dotnet_api.Dtos.User;
-using dotnet_api.Models;
+using DotnetApiDemo.Data;
+using DotnetApiDemo.Dtos.User;
+using DotnetApiDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace dotnet_api.Controllers
+namespace DotnetApiDemo.Controllers
 {
 
     [ApiController]

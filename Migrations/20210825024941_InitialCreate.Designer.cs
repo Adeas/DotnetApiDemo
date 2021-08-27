@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using dotnet_api.Data;
+using DotnetApiDemo.Data;
 
-namespace dotnet_api.Migrations
+namespace DotnetApiDemo.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20210825024941_InitialCreate")]
@@ -21,7 +21,7 @@ namespace dotnet_api.Migrations
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("dotnet_api.Models.Todo", b =>
+            modelBuilder.Entity("DotnetApiDemo.Models.Todo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace dotnet_api.Migrations
                     b.ToTable("Todos");
                 });
 
-            modelBuilder.Entity("dotnet_api.Models.User", b =>
+            modelBuilder.Entity("DotnetApiDemo.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -65,16 +65,16 @@ namespace dotnet_api.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("dotnet_api.Models.Todo", b =>
+            modelBuilder.Entity("DotnetApiDemo.Models.Todo", b =>
                 {
-                    b.HasOne("dotnet_api.Models.User", "User")
+                    b.HasOne("DotnetApiDemo.Models.User", "User")
                         .WithMany("Todos")
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("dotnet_api.Models.User", b =>
+            modelBuilder.Entity("DotnetApiDemo.Models.User", b =>
                 {
                     b.Navigation("Todos");
                 });

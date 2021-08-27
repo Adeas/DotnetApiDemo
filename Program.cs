@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace dotnet_api
+namespace DotnetApiDemo
 {
     public class Program
     {
@@ -20,6 +20,7 @@ namespace dotnet_api
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseUrls("http://*:80");
                     webBuilder.UseStartup<Startup>();
                 });
     }

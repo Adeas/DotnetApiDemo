@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using dotnet_api.Dtos.Todo;
-using dotnet_api.Models;
-using dotnet_api.Services.TodoService;
+using DotnetApiDemo.Dtos.Todo;
+using DotnetApiDemo.Models;
+using DotnetApiDemo.Services.TodoService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace dotnet_api.Controllers
+namespace DotnetApiDemo.Controllers
 {
     [Authorize]
     [ApiController]

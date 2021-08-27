@@ -4,13 +4,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
-using dotnet_api.Data;
-using dotnet_api.Dtos.Todo;
-using dotnet_api.Models;
+using DotnetApiDemo.Data;
+using DotnetApiDemo.Dtos.Todo;
+using DotnetApiDemo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
-namespace dotnet_api.Services.TodoService
+namespace DotnetApiDemo.Services.TodoService
 {
     public class TodoService : ITodoService
     {

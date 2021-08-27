@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using dotnet_api.Models;
+using DotnetApiDemo.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace dotnet_api.Data
+namespace DotnetApiDemo.Data
 {
     public class AuthRepository : IAuthRepository
     {

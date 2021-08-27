@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace dotnet_api.Models
+namespace DotnetApiDemo.Models
 {
     public class Todo
     {

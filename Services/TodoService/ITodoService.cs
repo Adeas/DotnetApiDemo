@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using dotnet_api.Dtos.Todo;
-using dotnet_api.Models;
+using DotnetApiDemo.Dtos.Todo;
+using DotnetApiDemo.Models;
 
-namespace dotnet_api.Services.TodoService
+namespace DotnetApiDemo.Services.TodoService
 {
     public interface ITodoService
     {

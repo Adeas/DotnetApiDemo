@@ -1,4 +1,4 @@
-namespace dotnet_api.Models
+namespace DotnetApiDemo.Models
 {
     public class ServiceResponse<T>
     {
