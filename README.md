@@ -1,4 +1,4 @@
-# dotnet-api
+# DotnetApiDemo
 
 
 ## What is this example for?
