@@ -10,21 +10,32 @@ This project mostly shows how to implement ASP.NET Core Web API using technologi
 - Microsoft.AspNetCore.Authentication.JwtBearer
 - Swashbuckle.AspNetCore.Filters
 
-## This example API can be run with Docker
+## This example API can be run in Docker Desktop with docker-compose
 
 To run both API and DB:
 ```
 docker-compose -f "docker-compose.yml" up -d --build
 ```
+When dotnetapidemo container is running and you can see that it is listening on port 80
 
 *NOTE! If dotnetapidemo container fails to start because of login issue, try to launch it again because there is deadlock issue in MSSQL that sometimes prevents login.
 
 ## Optionally run it without docker
-If you are not using docker, then this example expects local Microsoft SQL Server to be available for CRUD operations.
+If you are not using docker, then this example expects .NET 5.0 SDK to be installed and Microsoft SQL Server to be available for CRUD operations.
+
+You can install free Microsoft SQL Express from [Microsoft MS SQL Downloads](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+
+Optionally install [SSMS] (https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) SQL Server Management Studio.
+
 Before starting this project locally without docker run:
 ```
 - dotnet tool install --global dotnet-ef
 - dotnet restore
+```
+
+After all requirements are met and packages installed you can run the example project with:
+```
+dotnet watch run
 ```
 
 ## Docker-Compose
@@ -65,13 +76,7 @@ Download and install [Docker Community Edition](https://www.docker.com/community
 
 > **NOTE** Docker Toolbox is legacy. You should to use Docker Community Edition, See [Docker Toolbox](https://docs.docker.com/toolbox/overview/).
 
-Once you've installed Docker Community Edition, click the docker icon in Launchpad. Then start up a container:
-
-```
-docker run hello-world
-```
-
-That's it, you have a running Docker container.
+Once you've installed Docker Community Edition, click the docker icon in Launchpad.
 
 If you are a complete Docker newbie, you should probably follow the [series of tutorials](https://docs.docker.com/engine/getstarted/) now.
 
@@ -84,16 +89,7 @@ Once insalled, open powershell as administrator
 ```powershell
 #Display the version of docker installed:
 docker version
-
-##Pull, create, and run 'hello-world' all in one command:
-docker run hello-world
-
 ```
-
-To continue with this cheat sheet, right click the Docker icon in the system tray, and go to settings. In order to mount volumes, the C:/ drive will need to be enabled in the settings to that information can be passed into the containers (later described in this article). 
-
-To switch between Windows containers and Linux containers, right click the icon in the system tray and click the button to switch container operating system Doing this will stop the current containers that are running, and make them unaccessible until the container OS is switched back.
-
 
 Additionally, if you have WSL or WSL2 installed on your desktop, you might want to install the Linux Kernel for Windows. Instructions can be found [here](https://techcommunity.microsoft.com/t5/windows-dev-appconsult/using-wsl2-in-a-docker-linux-container-on-windows-to-run-a/ba-p/1482133). This requires the Windows Subsystem for Linux feature. This will allow for containers to be accessed by WSL operating systems, as well as the efficiency gain from running WSL operating systems in docker. It is also preferred to use [Windows terminal](https://docs.microsoft.com/en-us/windows/terminal/get-started) for this.
 
@@ -107,10 +103,6 @@ After installing, these commands will work:
 ```powershell
 #Display the version of docker installed:
 docker version
-
-##Pull, create, and run 'hello-world' all in one command:
-docker run hello-world
-
 ```
 
 Windows Server 2016 is not able to run linux images. 
