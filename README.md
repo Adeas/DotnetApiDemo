@@ -1,9 +1,8 @@
 # DotnetApiDemo
 
-
 ## What is this example for?
 
-This project mostly shows how to implement ASP.NET Core Web API using packages listed below and how to run this API with separate DB in Docker:
+This project mostly shows how to implement ASP.NET Core Web API using packages listed below and how to use Entity Framework, JWT token authorization, and Swagger:
 - Microsoft.EntityFrameworkCore.SqlServer
 - Microsoft.EntityFrameworkCore.Design
 - AutoMapper.Extensions.Microsoft.DependencyInjection
@@ -18,7 +17,7 @@ docker-compose -f "docker-compose.yml" up -d --build
 ```
 You know if the app container works if you can see that it is listening on port 80. If it fails to start because of a login issue, try to launch it again because there is still a deadlock bug in the code and the login function of MSSQL sometimes fails.
 
-## Optionally run it without docker
+### Optionally run it without docker
 If you are not using docker, then this example expects .NET 5.0 SDK to be installed and Microsoft SQL Server to be available for CRUD operations.
 
 You can install free Microsoft SQL Express from [Microsoft MS SQL Downloads](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
@@ -35,6 +34,8 @@ After requirements are met and packages installed you can run the example projec
 ```
 dotnet watch run
 ```
+## How to access DotnetApiDemo Swagger
+After both API and DB containers are running, you can access Swagger using http://localhost:8001/swagger where you need to first register a user account using Register under Auth endpoints, use that account then in Login and copy the JWT token returned inside "data" field to the "Authorize" with prefix "Bearer " like instructed. After authorization, you can see locks next to "Todo" endpoints switch to the locked position, and only then Todo endpoints can be called without receiving "Error: Unauthorized."
 
 ## Docker-Compose
 
