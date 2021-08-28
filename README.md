@@ -3,7 +3,7 @@
 
 ## What is this example for?
 
-This project mostly shows how to implement ASP.NET Core Web API using packages listed below:
+This project mostly shows how to implement ASP.NET Core Web API using packages listed below and how to run this API with separate DB in Docker:
 - Microsoft.EntityFrameworkCore.SqlServer
 - Microsoft.EntityFrameworkCore.Design
 - AutoMapper.Extensions.Microsoft.DependencyInjection
@@ -16,9 +16,7 @@ To run both API and DB:
 ```
 docker-compose -f "docker-compose.yml" up -d --build
 ```
-When dotnetapidemo container is running and you can see that it is listening on port 80
-
-*NOTE! If dotnetapidemo container fails to start because of login issue, try to launch it again because there is deadlock issue in MSSQL that sometimes prevents login.
+You know if the app container works if you can see that it is listening on port 80. If it fails to start because of a login issue, try to launch it again because there is still a deadlock bug in the code and the login function of MSSQL sometimes fails.
 
 ## Optionally run it without docker
 If you are not using docker, then this example expects .NET 5.0 SDK to be installed and Microsoft SQL Server to be available for CRUD operations.
@@ -33,7 +31,7 @@ Before starting this project locally without docker run:
 - dotnet restore
 ```
 
-After all requirements are met and packages installed you can run the example project with:
+After requirements are met and packages installed you can run the example project with:
 ```
 dotnet watch run
 ```
@@ -48,7 +46,7 @@ By using the following command you can start up your application:
 docker-compose -f <docker-compose-file> up
 ```
 
-You can also run docker-compose in detached mode using -d flag, then you can stop it whenever needed by the following command:
+You can also run docker-compose in detached mode using the -d flag, then you can stop it whenever needed by the following command:
 
 ```
 docker-compose stop
@@ -74,7 +72,7 @@ If you are a complete Docker newbie, you should follow the [series of tutorials]
 
 Download and install [Docker Community Edition](https://www.docker.com/community-edition). if you have Homebrew-Cask, just type `brew cask install docker`. Or Download and install [Docker Toolbox](https://docs.docker.com/toolbox/overview/).  [Docker For Mac](https://docs.docker.com/docker-for-mac/) is nice, but it's not quite as finished as the VirtualBox install.  [See the comparison](https://docs.docker.com/docker-for-mac/docker-toolbox/).
 
-> **NOTE** Docker Toolbox is legacy. You should to use Docker Community Edition, See [Docker Toolbox](https://docs.docker.com/toolbox/overview/).
+> **NOTE** Docker Toolbox is legacy. You should use Docker Community Edition, See [Docker Toolbox](https://docs.docker.com/toolbox/overview/).
 
 Once you've installed Docker Community Edition, click the docker icon in Launchpad.
 
@@ -84,9 +82,9 @@ If you are a complete Docker newbie, you should probably follow the [series of t
 
 Instructions to install Docker Desktop for Windows can be found [here](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
 
-Once insalled, open powershell as administrator
+Once installed, open Windows PowerShell as administrator
 
-```powershell
+```PowerShell
 #Display the version of docker installed:
 docker version
 ```
@@ -97,14 +95,14 @@ Additionally, if you have WSL or WSL2 installed on your desktop, you might want 
 
 Follow Microsoft's instructions that can be found [here](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/deploy-containers-on-server#install-docker)
 
-If using the latest edge version of 2019, be prepared to only work in powershell, as it is only a servercore image (no desktop interface). When starting this machine, it will login and go straight to a powershell window. It is reccomended to install text editors and other tools using [Chocolatey](https://chocolatey.org/install).
+If using the latest edge version of 2019, be prepared to only work in PowerShell, as it is only a server core image (no desktop interface). When starting this machine, it will log in and go straight to a PowerShell window. It is recommended to install text editors and other tools using [Chocolatey](https://chocolatey.org/install).
 
 After installing, these commands will work:
-```powershell
+```PowerShell
 #Display the version of docker installed:
 docker version
 ```
 
-Windows Server 2016 is not able to run linux images. 
+Windows Server 2016 is not able to run Linux images. 
 
-Windows Server Build 2004 is capable of running both linux and windows containers simultaneously through Hyper-V isolation. When running containers, use the ```--isolation=hyperv``` command, which will isolate the container using a seperate kernel instance. 
+Windows Server Build 2004 is capable of running both Linux and Windows containers simultaneously through Hyper-V isolation. When running containers, use the ```--isolation=hyperv``` command, which will isolate the container using a separate kernel instance. 
