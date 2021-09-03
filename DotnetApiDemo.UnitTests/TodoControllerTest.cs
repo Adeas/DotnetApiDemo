@@ -28,7 +28,29 @@ namespace DotnetApiDemo.UnitTests
             Assert.IsType<ActionResult<ServiceResponse<GetTodoDto>>>(result);
         }
 
+
+        [Fact]
+        public async Task GetItemsAsync_WithExistingItems_ReturnsAllItems()
+        {
+            // Arrange
+            var expectedItems = new[]{CreateRandomTodo()};
+
+            var todoServiceStub = new Mock<ITodoService>();
+            var controller = new TodoController(todoServiceStub.Object);
+            // Act
+
+            // Assert
+        }
         
+        private Todo CreateRandomTodo() {
+            Random rnd = new Random();
+            return new()
+            {
+                Id = rnd.Next(100),
+                Message = "Random text: " + Guid.NewGuid().ToString(),
+                Done = false
+            };
+        }
 
         private List<GetTodoDto> GetTestTodoDtos()
         {

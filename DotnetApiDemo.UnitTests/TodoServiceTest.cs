@@ -2,6 +2,10 @@ using Xunit;
 using DotnetApiDemo.Services.TodoService;
 using System.Threading.Tasks;
 using Moq;
+using DotnetApiDemo.Controllers;
+using Microsoft.AspNetCore.Mvc;
+using DotnetApiDemo.Models;
+using DotnetApiDemo.Dtos.Todo;
 
 namespace DotnetApiDemo.UnitTests
 {

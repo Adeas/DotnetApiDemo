@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+kBj20J55WtjCoMe5n02i/WJ4enuisoljS2lRSp0+TLZZh4MNGQY9EXQgEqzciW1xKjDdYhFet5dfxedo/DSNA==",
+  "dgSpecHash": "htqZ36LoBR+UItPYseFfxIJnGosPUeB4F0rSeA807RZsbOpCvdaR55WKgZ11AhrwjzE+g/597Z86Gp0VkjZb0Q==",
   "success": true,
   "projectFilePath": "c:\\development\\dotnet-api\\DotnetApiDemo.UnitTests\\DotnetApiDemo.UnitTests.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\ranta\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\ranta\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\ranta\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
+    "C:\\Users\\ranta\\.nuget\\packages\\fluentassertions\\6.1.0\\fluentassertions.6.1.0.nupkg.sha512",
     "C:\\Users\\ranta\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.9\\microsoft.aspnetcore.authentication.jwtbearer.5.0.9.nupkg.sha512",
     "C:\\Users\\ranta\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
     "C:\\Users\\ranta\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
